@@ -1,0 +1,92 @@
+Library for RFTide Aurel module
+
+Implemented Function:
+
+   
+RFTide(byte RX_pin, byte TX_pin, byte EN_pin)	Contructor	   
+
+void localIoSet(byte payload)	Set Output in local module
+	payload=0 set GPOUT0
+	payload=1 set GPOUT1	   
+
+void localIoReset(byte payload)	Reset Output in local module
+	payload=0 reset GPOUT0
+	payload=1 reset GPOUT1	   
+
+IOSTATUS localIoRead()	Return IO status in local module
+	byte getGPIN0 (0=OFF, 1=ON)
+	byte getGPIN1 (0=OFF, 1=ON)
+	byte getGPOUT0 (0=OFF, 1=ON)
+	byte getGPOUT1 (0=OFF, 1=ON)
+	int getADC0 
+	int getADC1 	   
+
+NTSTATUS localStatus()	Return status in local module
+	byte getAddress
+	unsigned long getNetworkID
+	int getFWversion
+	byte getProfile	   
+
+byte getLocalAddress()	Return address of the local module	   
+int getLocalFWversion()	Return firmware versione of the 	local module	   (format XYY)
+
+byte getLocalProfile()	Return profile type of the local 	module	   (0=none 1=motor 2=PWM 3=metering)
+
+void resetLocalDevice()	Reset local module	   
+
+unsigned long getLocalNetworkID()	Return NetworkID of the 	local module	   
+
+void remoteIoSet(byte nodeAddress, byte payload)	Set IO in 	remote module
+	payload=0 set GPOUT0
+	payload=1 set GPOUT1	   
+
+void remoteIoReset(byte nodeAddress, byte payload)	Reset IO 	in remote module
+	payload=0 reset GPOUT0
+	payload=1 reset GPOUT1	   
+
+IOSTATUS remoteIoRead(byte nodeAddress)	Return IO status in 	remote module
+	byte getGPIN0 (0=OFF, 1=ON)
+	byte getGPIN1 (0=OFF, 1=ON)
+	byte getGPOUT0 (0=OFF, 1=ON)
+	byte getGPOUT1 (0=OFF, 1=ON)
+	int getADC0 
+	int getADC1	   
+
+void progMessage(byte nodeAddress, byte nodeProfile)	Program 	remote module for associate to network
+	nodeProfile: none, motor, PWM, metering,repeater	 
+  
+NTSTATUS ping(byte nodeAddress)	Ping remote module and return 	remote status
+ 	byte getAddress
+	unsigned long getNetworkID
+	int getFWversion
+	byte getProfile	   
+
+byte getGPIN0()	Read value of GPIN0	 
+  
+byte getGPIN1()	Read value of GPIN1	 
+  
+byte getGPOUT0()	Read value of GPOUT0	 
+  
+byte getGPOUT1()	Read value of GPOUT1	
+   
+int version()	Return a version of library
+	format is XYY (100 is V1.00)	
+   
+void enable()	Enable module	 
+  
+void disable()	Disable module	 
+  
+void sendPacket(byte nodeAddress, char payload[])	Send packet 	to remote module
+	nodeAddress = address mof remote module
+	payload = 8 byte of data
+	   
+byte readPacket(byte inbyte[])	Read fixed 8byte Packet 	received from remote module
+	If valid data is available return address of 	remote 	module else return 255.
+	Data received is saved in the inbyte array	 
+  
+byte status()	Return status of the last operation
+	ANSWER	   receive correctly answer 
+	NOANSWER   no answer received
+	BADANSWER  bad data on receive buffer
+	BRKANSWER  incomplete data on receive buffer
+	RECPACKET  receive packet from remote	 

@@ -1,0 +1,46 @@
+#######################################
+#  keywords.txt 
+# Syntax Coloring Map For RFtide
+#  Created by Mirco Segatello July 2013
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+RFTide	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+
+RFTide	KEYWORD2	
+localIoSet	KEYWORD2
+localIoReset	KEYWORD2
+remoteIoSet	KEYWORD2
+remoteIoReset	KEYWORD2
+localIoRead	KEYWORD2
+remoteIoRead	KEYWORD2
+getGPIN0	KEYWORD2
+getGPIN1	KEYWORD2
+getGPOUT0	KEYWORD2
+getGPOUT1	KEYWORD2
+localStatus	KEYWORD2	
+getLocalAddress	KEYWORD2
+getLocalNetworkID	KEYWORD2
+getLocalFWversion	KEYWORD2
+getLocalProfile	KEYWORD2
+progMessage	KEYWORD2
+resetLocalDevice		KEYWORD2
+ping	KEYWORD2
+enable	KEYWORD2
+disable	KEYWORD2
+sendPacket	KEYWORD2
+readPacket	KEYWORD2
+status	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
