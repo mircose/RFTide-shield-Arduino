@@ -1,6 +1,6 @@
 Open-electronics RFTide shield libraries for Arduino
-Version: 1.0.0
-Release Date: 2013-08-25
+Version: 1.0.1
+Release Date: 2013-11-29
 Author: Mirco Segatello
 http://www.open-electronics.org/
 
@@ -24,5 +24,6 @@ Library include some example.
 
 
 Version History
+1.0.1 (2013-11-29): updatet sketch
 1.0.0 (2013-08-25): Original release
 

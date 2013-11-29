@@ -85,7 +85,7 @@ byte readPacket(byte inbyte[])	Read fixed 8byte Packet 	received from remote mod
 	Data received is saved in the inbyte array	 
   
 byte status()	Return status of the last operation
-	ANSWER	   receive correctly answer 
+	ANSWER	receive correctly answer 
 	NOANSWER   no answer received
 	BADANSWER  bad data on receive buffer
 	BRKANSWER  incomplete data on receive buffer

@@ -23,7 +23,7 @@
 //#define DEBUG
 
 //define version
-#define VERSION   100 // library version X.YY (e.g. 1.00)
+#define VERSION   101 // library version X.YY (e.g. 1.00)
 
 //define status value
 #define ANSWER	   0	//receive correctly answer 
