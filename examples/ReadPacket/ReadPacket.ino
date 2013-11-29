@@ -15,9 +15,9 @@
 #include <SoftwareSerial.h>
 
 // Define RFTide shield pin
-byte TX  = 4;
-byte RX  = 5;
-byte EN  = 7;
+byte TX  = 3;
+byte RX  = 2;
+byte EN  = 10;
 
 byte packet[8]; //for data read
 

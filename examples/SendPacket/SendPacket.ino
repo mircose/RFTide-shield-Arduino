@@ -16,9 +16,9 @@
 #include <SoftwareSerial.h>
 
 // Define RFTide shield pin
-byte TX  = 4;
-byte RX  = 5;
-byte EN  = 7;
+byte TX  = 3;
+byte RX  = 2;
+byte EN  = 10;
 
 // remote module to send a packet
 byte remoteAddress = 2;
@@ -45,7 +45,7 @@ void loop()
   rftide.sendPacket(remoteAddress, txtMsg);
   
   //checks whether the message has been received
-  if (rftide.error()==NOERROR) 
+  if (rftide.status()==ANSWER) 
     Serial.println("Message received");
   else
     Serial.println("Message is not received!");   

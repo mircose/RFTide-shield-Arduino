@@ -14,9 +14,9 @@
 #include <SoftwareSerial.h>
 
 // Define RFTide shield pin
-byte TX  = 4;
-byte RX  = 5;
-byte EN  = 7;
+byte TX  = 3;
+byte RX  = 2;
+byte EN  = 10;
 
 // Create object rftide
 RFTide rftide(RX, TX, EN);
@@ -48,9 +48,11 @@ void loop() {
   Serial.println(InOutStatus.getGPOUT1); 
   
   // Alternative read local all IO (report only GPIN0 value)
+  Serial.print("GPIN0=");
   Serial.println(rftide.localIoRead().getGPIN0);
   
   // Alternative read local all IO (report only GPIN0 value)
+  Serial.print("GPIN0=");
   rftide.localIoRead();  
   Serial.println(rftide.getGPIN0()); 
 }

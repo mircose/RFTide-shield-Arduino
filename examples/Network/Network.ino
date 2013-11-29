@@ -22,9 +22,9 @@
 #include <SoftwareSerial.h>
 
 // Define RFTide shield pin
-byte TX  = 4;
-byte RX  = 5;
-byte EN  = 7;
+byte TX  = 3;
+byte RX  = 2;
+byte EN  = 10;
 byte c;
 // Create object rftide
 RFTide rftide(RX, TX, EN);
@@ -44,13 +44,15 @@ void loop() {
   {
     c = Serial.read();
     if (c=='p') {
-      Serial.println("Elenco moduli in rete:");
+      Serial.println("List of modules in the network:");
       for (int i=0; i<6; i++) {
           
           NTSTATUS Populate = rftide.ping(i); 
-         // if (Populate.getFWversion>0) {
-          if (rftide.error()==NOERROR) { 
-            Serial.print("AddrSend");
+          if (rftide.status()==ANSWER)  
+        {
+        Serial.print("status=");
+        Serial.print(rftide.status());
+            Serial.print("  AddrSend:");
             Serial.print(i);
             Serial.print(" AddrRemote:"); 
             Serial.print(Populate.getAddress);
